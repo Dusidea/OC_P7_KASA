@@ -1,0 +1,15 @@
+@import "../styles/variables.css";
+
+.header__div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 57px;
+}
