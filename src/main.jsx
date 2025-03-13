@@ -11,7 +11,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Header />
+
       <Routing />
+
       <Footer />
     </BrowserRouter>
   </StrictMode>

@@ -1,12 +1,55 @@
 @import "./variables.css";
+@import "./resets.css";
+
+* {
+  box-sizing: border-box;
+
+  max-width: 100%;
+}
 
 :root {
-  box-sizing: border-box;
+  font-size: 24px;
+  /* 1 rem = 24 */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 body {
   font-family: var(--font-base);
-  margin: 0;
   background-color: #fff;
-  padding: 10px;
+  padding-top: 45px;
+}
+
+.home_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  gap: 40px;
+}
+
+.gallery {
+  background: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: center;
+
+  padding: 50px;
+  gap: 20px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
 }

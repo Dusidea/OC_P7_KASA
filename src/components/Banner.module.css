@@ -1,0 +1,57 @@
+@import "../styles/variables.css";
+
+.banner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: black;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-image: url("../assets/BannerHome.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 223px;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--light-grey);
+  z-index: 1;
+  border-radius: 25px;
+  opacity: 0.6;
+  mix-blend-mode: darken;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  opacity: 0.6;
+  mix-blend-mode: darken;
+  border-radius: 25px;
+  z-index: 2;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 3;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    justify-content: flex-start;
+  }
+  .title {
+    font-size: 1rem;
+    margin-left: 16px;
+    width: 225px;
+  }
+}

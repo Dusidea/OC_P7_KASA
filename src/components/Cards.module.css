@@ -1,0 +1,60 @@
+@import "../styles/variables.css";
+
+.cardblock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 calc((100% - 40px) / 3); /* 2 gaps de 20px entre 3 colonnes */
+  max-width: calc((100% - 40px) / 3);
+  position: relative;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  justify-content: flex-end;
+  aspect-ratio: 1 / 1;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(10, 10, 10, 0) 42%,
+    rgba(4, 4, 4, 0.205) 99.99%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+  border-radius: 10px;
+  opacity: 0.6;
+  mix-blend-mode: darken;
+}
+
+.card__text {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .cardblock {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1;
+    max-width: 100%;
+  }
+}

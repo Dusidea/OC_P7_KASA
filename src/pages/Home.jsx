@@ -1,9 +1,15 @@
+import Banner from "../components/Banner.jsx";
+import Cards from "../components/Cards.jsx";
+import "../styles/main.css";
+
 function Home() {
-  console.log("fonction home");
   return (
-    <>
-      <h1>Ceci est la page home</h1>
-    </>
+    <div className="home_wrapper">
+      <Banner />
+      <div className="gallery">
+        <Cards />
+      </div>
+    </div>
   );
 }
 
