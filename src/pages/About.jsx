@@ -1,9 +1,18 @@
+import BannerAbout from "../components/BannerAbout";
+import Collapse from "../components/Collapse";
+import "../styles/main.css";
+
 function About() {
-  console.log("fonction about");
   return (
-    <>
-      <h1>Ceci est la page à propos</h1>
-    </>
+    <div className="about_wrapper">
+      <BannerAbout />
+      <Collapse title="Fiabilité">
+        <p>toto</p>
+      </Collapse>
+      <Collapse title="XXXX">
+        <p>toto</p>
+      </Collapse>
+    </div>
   );
 }
 

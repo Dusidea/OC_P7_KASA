@@ -8,11 +8,11 @@
   border: black;
   border-radius: 25px;
   box-shadow: 0px 4px 4px 0px #00000040;
-  background-image: url("../assets/BannerHome.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
   height: 223px;
+  width: 100%;
 }
 
 .banner::before {
@@ -22,7 +22,7 @@
   background: var(--light-grey);
   z-index: 1;
   border-radius: 25px;
-  opacity: 0.6;
+
   mix-blend-mode: darken;
 }
 
@@ -37,12 +37,36 @@
   z-index: 2;
 }
 
+.bannerHome {
+  background-image: url("../assets/BannerHome.png");
+}
+
+.bannerHome::before {
+  opacity: 0.6;
+}
+
+.bannerHome::after {
+  opacity: 0.6;
+}
+
 .title {
   color: white;
   font-size: 2rem;
   font-weight: 700;
   z-index: 3;
   flex-wrap: wrap;
+}
+
+.bannerAbout {
+  background-image: url("../assets/BannerAbout.png");
+}
+
+.bannerAbout::before {
+  opacity: 0.3;
+}
+
+.bannerAbout::after {
+  opacity: 0.3;
 }
 
 @media (max-width: 768px) {
