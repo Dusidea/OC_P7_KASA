@@ -10,9 +10,11 @@ import "./styles/main.css";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Header />
+      <div className="headerMainWrapper">
+        <Header />
 
-      <Routing />
+        <Routing />
+      </div>
 
       <Footer />
     </BrowserRouter>

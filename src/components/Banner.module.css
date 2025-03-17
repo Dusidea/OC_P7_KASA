@@ -50,6 +50,7 @@
 }
 
 .title {
+  display: flex;
   color: white;
   font-size: 2rem;
   font-weight: 700;
@@ -72,6 +73,10 @@
 @media (max-width: 768px) {
   .banner {
     justify-content: flex-start;
+  }
+
+  .bannerHome {
+    height: 111px;
   }
   .title {
     font-size: 1rem;

@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <div className={styles.footer__div}>
       <img src={LOGO_footer} title="logo de Kasa" alt="logo de Kasa"></img>
-      <p className={styles.footer__div__text}>
+      <h4 className={styles.footer__div__text}>
         © 2020 Kasa. All rights reserved
-      </p>
+      </h4>
     </div>
   );
 }

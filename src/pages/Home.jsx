@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 function Home() {
   const [logements, setLogements] = useState([]);
-  const [loading, setLoading] = useState(true); // loader, facultatif
-  const [error, setError] = useState(null); // pour gérer les erreurs
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("../../public/logements.json")

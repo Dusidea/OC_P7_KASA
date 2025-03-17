@@ -10,14 +10,14 @@
 .card {
   display: flex;
   flex-direction: column;
-
-  flex: 1 1 calc((100% - 40px) / 3); /* 2 gaps de 20px entre 3 colonnes */
+  flex: 1 1 calc((100% - 40px) / 3);
   max-width: calc((100% - 40px) / 3);
   position: relative;
   border-radius: 10px;
   background-color: var(--primary-color);
-  justify-content: flex-end;
+  justify-content: space-between;
   aspect-ratio: 1 / 1;
+  border-radius: 10px;
 }
 
 .card::before {
@@ -48,6 +48,13 @@
   margin: 0;
 }
 
+.card__image {
+  object-fit: cover;
+  height: 60%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 @media (max-width: 768px) {
   .cardblock {
     flex-direction: column;
@@ -56,5 +63,7 @@
   .card {
     flex: 1;
     max-width: 100%;
+    aspect-ratio: 0;
+    height: 255px;
   }
 }

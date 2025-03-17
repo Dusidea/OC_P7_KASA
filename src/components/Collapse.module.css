@@ -14,11 +14,10 @@
   border-radius: 5px;
   padding: 10px 20px 10px 15px;
   justify-content: space-between;
-}
-.collapseTitle {
   color: white;
   font-size: 1rem;
   font-weight: 700;
+  border: 0;
 }
 
 .collapseInner {
@@ -35,4 +34,18 @@
 
 .closed {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .collapseWrapper {
+    width: 100%;
+  }
+
+  .collapseTop {
+    font-size: 13px;
+  }
+
+  .collapseInner {
+    font-size: 12px;
+  }
 }
