@@ -4,7 +4,7 @@ import "../styles/main.css";
 
 function About() {
   return (
-    <div className="about_wrapper">
+    <div className="main_wrapper">
       <BannerAbout />
       <Collapse title="Fiabilité">
         <p>

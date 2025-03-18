@@ -1,7 +1,6 @@
 import styles from "./Collapse.module.css";
-import ChevronUp from "../assets/ChevronUp.svg";
-import ChevronDown from "../assets/ChevronDown.svg";
 import { useState } from "react";
+import ChevronUp from "../assets/ChevronUp.svg";
 
 export default function Collapse({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,21 +11,23 @@ export default function Collapse({ title, children }) {
 
   return (
     <div className={styles.collapseWrapper}>
-      <button className={styles.collapseTop} onClick={toggleCollapse}>
-        {title}
-        {isOpen ? (
-          <img src={ChevronUp} alt="Fermer" />
-        ) : (
-          <img src={ChevronDown} alt="Ouvrir" />
-        )}
-      </button>
+      <div className={styles.collapseItem}>
+        <button className={styles.collapseTop} onClick={toggleCollapse}>
+          {title}
+          <img
+            src={ChevronUp}
+            alt={isOpen ? "Fermer" : "Ouvrir"}
+            className={`${styles.chevron} ${isOpen ? styles.rotate : ""}`}
+          />
+        </button>
 
-      <div
-        className={`${styles.collapseInner} ${
-          isOpen ? styles.open : styles.closed
-        }`}
-      >
-        {children}
+        <div
+          className={`${styles.collapseInner} ${
+            isOpen ? styles.open : styles.closed
+          }`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

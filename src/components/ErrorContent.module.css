@@ -1,0 +1,56 @@
+@import "../styles/variables.css";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-color);
+  gap: 139px;
+  padding-bottom: 45px;
+}
+
+.title {
+  display: flex;
+  font-size: 288px;
+  font-weight: 700;
+}
+
+.subtitle {
+  display: flex;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.link {
+  display: flex;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 113px;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  .title {
+    display: flex;
+    font-size: 96px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+}

@@ -3,8 +3,13 @@
 .collapseWrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   width: 80%;
+}
+
+.collapseItem {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .collapseTop {
@@ -18,27 +23,65 @@
   font-size: 1rem;
   font-weight: 700;
   border: 0;
+  margin: 0;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 .collapseInner {
   background: var(--light-grey);
-  margin-top: -30px;
+  margin: 0;
   font-size: 18px;
   font-weight: 400;
-  padding: 20px;
+  overflow: hidden;
+  padding: 0 20px;
+
+  /* XXXsolution avec maxheight */
+  opacity: 0;
+  max-height: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  /* FIN SOLUTON MAX HEIGHT */
+
+  /* transform-origin: top;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  height: auto; */
 }
 
 .open {
-  display: flex;
+  opacity: 1;
+  /* XXXsolution avec maxheight */
+  max-height: 500px;
+  /* FIN SOLUTON MAX HEIGHT */
+
+  /* transform: scaleY(1);
+  height: auto; */
+  padding: 20px;
+  max-height: 500px;
 }
 
 .closed {
-  display: none;
+  /* transform: scaleY(0);
+  height: 0; */
+  max-height: 0;
+
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
   .collapseWrapper {
     width: 100%;
+  }
+
+  .collapseItem {
   }
 
   .collapseTop {

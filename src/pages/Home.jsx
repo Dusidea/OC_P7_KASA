@@ -31,7 +31,7 @@ function Home() {
   if (error) return <p>Erreur : {error}</p>;
 
   return (
-    <div className="home_wrapper">
+    <div className="main_wrapper">
       <BannerHome />
       <div className="gallery">
         <Cards logements={logements} />

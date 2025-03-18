@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/main.css";
+import ErrorContent from "../components/ErrorContent.jsx";
 
 function Error() {
   return (
-    <div>
-      <h1>Oups 🙈 Cette page n'existe pas</h1>
+    <div className="main_wrapper">
+      <ErrorContent />
     </div>
   );
 }
