@@ -6,7 +6,11 @@ export default function Cards({ logements }) {
     <>
       <div className={styles.cardblock}>
         {logements.map((logement) => (
-          <a className={styles.card} href="" key={logement.id}>
+          <a
+            className={styles.card}
+            href={`logement/${logement.id}`}
+            key={logement.id}
+          >
             <img
               className={styles.card__image}
               src={logement.cover}

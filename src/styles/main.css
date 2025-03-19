@@ -39,14 +39,6 @@ body {
   flex: 1;
 }
 
-/* .home_wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-top: 45px;
-  gap: 40px;
-  align-items: center;
-} */
-
 .gallery {
   background: var(--light-grey);
   display: flex;
