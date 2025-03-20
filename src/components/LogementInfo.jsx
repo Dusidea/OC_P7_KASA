@@ -1,7 +1,5 @@
 import styles from "./LogementInfo.module.css";
 import Collapse from "../components/Collapse.jsx";
-// import Starr from "../assets/Starr.svg";
-// import Starg from "../assets/Starg.svg";
 
 import Rating from "./Rating.jsx";
 
@@ -44,14 +42,6 @@ function LogementInfo({ logement }) {
           <Rating score={parseInt(logement.rating)} />
         </div>
       </div>
-      {/* <div className={styles.tags}>
-        {taglist.map((tag) => (
-          <div key={tag} className={`${styles.tag} ${styles.tagsDesktop}`}>
-            {tag}
-          </div>
-        ))}
-      </div> */}
-
       <div className={styles.collapseBlock}>
         <Collapse title="Description">{logement.description}</Collapse>
         <Collapse title="Équipements">

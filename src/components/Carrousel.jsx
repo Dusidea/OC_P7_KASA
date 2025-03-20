@@ -9,12 +9,10 @@ export default function Carrousel({ logement }) {
   const isSingleImage = pictures.length === 1;
 
   function goToNextSlide() {
-    console.log("go to next slide");
     setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % pictures.length);
   }
 
   function goToPreviousSlide() {
-    console.log("go to prev slide");
     setCurrentSlideIndex(
       (prevIndex) => (prevIndex - 1 + pictures.length) % pictures.length
     );

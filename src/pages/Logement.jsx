@@ -1,30 +1,31 @@
 import Carrousel from "../components/Carrousel.jsx";
 import LogementInfo from "../components/LogementInfo.jsx";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-// import styles from "./Logement.module.css";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Logement() {
   const { id } = useParams();
-  const [logement, setLogement] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [logement, setLogement] = useState(undefined);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("../../public/logements.json")
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((item) => item.id === id);
-        setLogement(found);
-        setLoading(false);
+        if (!found) {
+          navigate("/error");
+        } else {
+          setLogement(found);
+        }
       })
       .catch((error) => {
         console.error("Erreur de fetch logement :", error);
-        setLoading(false);
+        navigate("/error");
       });
-  }, [id]);
+  }, [id, navigate]);
 
-  if (loading) return <p>Chargement...</p>;
-  if (!logement) return <p>Logement introuvable</p>;
+  if (!logement) return null;
 
   return (
     <div className="main_wrapper">
