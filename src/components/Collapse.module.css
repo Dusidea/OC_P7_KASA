@@ -26,8 +26,17 @@
   margin: 0;
 }
 
+.collapseTopAbout {
+  font-size: 24px;
+}
+
+.collapseTopLogement {
+  font-size: 18px;
+}
+
 .chevron {
   transition: transform 0.3s ease;
+  width: 24px;
 }
 
 .rotate {
@@ -41,36 +50,21 @@
   font-weight: 400;
   overflow: hidden;
   padding: 0 20px;
-
-  /* XXXsolution avec maxheight */
+  border-radius: 5px;
   opacity: 0;
   max-height: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-  /* FIN SOLUTON MAX HEIGHT */
-
-  /* transform-origin: top;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  will-change: transform, opacity;
-  height: auto; */
 }
 
 .open {
   opacity: 1;
-  /* XXXsolution avec maxheight */
   max-height: 500px;
-  /* FIN SOLUTON MAX HEIGHT */
-
-  /* transform: scaleY(1);
-  height: auto; */
   padding: 20px;
   max-height: 500px;
 }
 
 .closed {
-  /* transform: scaleY(0);
-  height: 0; */
   max-height: 0;
-
   opacity: 0;
   padding: 0;
   pointer-events: none;
@@ -81,14 +75,15 @@
     width: 100%;
   }
 
-  .collapseItem {
-  }
-
   .collapseTop {
     font-size: 13px;
   }
 
   .collapseInner {
     font-size: 12px;
+  }
+
+  .chevron {
+    scale: 0.5;
   }
 }

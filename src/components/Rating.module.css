@@ -1,0 +1,14 @@
+@import "../styles/variables.css";
+
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+}
