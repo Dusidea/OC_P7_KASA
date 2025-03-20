@@ -12,14 +12,18 @@ function LogementInfo({ logement }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.halfWrapper}>
-        <div className={styles.titles}>
-          <h1 className={styles.title}>{logement.title}</h1>
-          <h2 className={styles.location}>{logement.location}</h2>
-        </div>
-        <div className={styles.tags}>
-          {taglist.map((tag) => (
-            <div className={`${styles.tag} ${styles.tagsMobile}`}>{tag}</div>
-          ))}
+        <div className={styles.leftBlock}>
+          <div className={styles.titles}>
+            <h1 className={styles.title}>{logement.title}</h1>
+            <h2 className={styles.location}>{logement.location}</h2>
+          </div>
+          <div className={styles.tags}>
+            {taglist.map((tag) => (
+              <div key={tag} className={styles.tag}>
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
         <div className={styles.halfWrapperRight}>
           <div className={styles.host}>
@@ -40,13 +44,13 @@ function LogementInfo({ logement }) {
           <Rating score={parseInt(logement.rating)} />
         </div>
       </div>
-      <div className={`${styles.tags} ${styles.tagsDesktop}`}>
+      {/* <div className={styles.tags}>
         {taglist.map((tag) => (
-          <div key={tag} className={styles.tag}>
+          <div key={tag} className={`${styles.tag} ${styles.tagsDesktop}`}>
             {tag}
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div className={styles.collapseBlock}>
         <Collapse title="Description">{logement.description}</Collapse>
