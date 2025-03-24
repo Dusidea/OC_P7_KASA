@@ -39,6 +39,8 @@
 
 .card__text {
   display: flex;
+  position: absolute;
+  bottom: 0;
   font-size: 18px;
   font-weight: 700;
   color: white;
@@ -50,9 +52,8 @@
 
 .card__image {
   object-fit: cover;
-  height: 60%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: 100%;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -64,6 +65,10 @@
     flex: 1;
     max-width: 100%;
     aspect-ratio: 0;
+    height: 255px;
+  }
+
+  .card__image {
     height: 255px;
   }
 }
