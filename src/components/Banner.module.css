@@ -1,5 +1,11 @@
 @import "../styles/variables.css";
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .banner {
   display: flex;
   position: relative;
@@ -71,13 +77,15 @@
 }
 
 @media (max-width: 768px) {
-  .banner {
-    justify-content: flex-start;
+  .wrapper {
+    gap: 19px;
   }
 
-  .bannerHome {
+  .banner {
+    justify-content: flex-start;
     height: 111px;
   }
+
   .title {
     font-size: 1rem;
     margin-left: 16px;

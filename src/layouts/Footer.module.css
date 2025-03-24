@@ -24,6 +24,7 @@
     font-size: 0.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    padding-bottom: 66px;
   }
 
   .footer__div__text {

@@ -24,7 +24,7 @@ export default function Carrousel({ logement }) {
         <img
           className={styles.cover}
           src={pictures[currentSlideIndex]}
-          alt={`${logement.title} - ${currentSlideIndex + 1}`}
+          alt={logement.title}
         />
 
         {/* Ici on vérifie qu'on a bien plusieurs images pour afficher les éléments du slider */}
