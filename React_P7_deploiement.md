@@ -297,3 +297,115 @@ Cela empêche les erreurs 404 en mode SPA.
 ✅ **Fichier `.htaccess` si React Router est utilisé**
 
 💡 **Tout est bon ? Tu peux maintenant transférer ton build `dist/` sur OVH !** 🚀
+
+# Déploiement sur VPS via Windows
+
+D'accord ! Si ton VPS tourne sous **Windows Server**, voici comment déployer ton application React (Vite) dessus.
+
+---
+
+### 📌 **1. Prendre un VPS Windows**
+- Choisis un hébergeur qui propose **Windows Server** (ex: **Hetzner, OVH, Contabo**).
+- Connecte-toi au VPS via **Bureau à distance (RDP)**.
+
+---
+
+### 📌 **2. Installer un serveur web**
+Sous Windows, tu peux utiliser :
+1. **IIS (Internet Information Services)** → intégré à Windows Server.
+2. **Nginx** → plus léger et performant.
+
+Je vais détailler les deux options. Tu peux choisir celle qui te convient.
+
+---
+
+## ⚙️ **Méthode 1 : Déploiement avec IIS (Windows Server)**
+### 🔹 **2.1 Activer IIS**
+1. Ouvre **"Gestionnaire de serveur"**.
+2. Va dans **"Ajouter des rôles et fonctionnalités"**.
+3. Coche **"Serveur Web (IIS)"** et valide l’installation.
+
+### 🔹 **2.2 Configurer IIS**
+1. Place ton app dans `C:\inetpub\wwwroot\` :
+   - Sur ton PC, exécute :  
+     ```sh
+     npm run build
+     ```
+   - Transfère le dossier `dist/` sur le serveur (`C:\inetpub\wwwroot\`).
+   - Renomme `dist` en `myapp`.
+
+2. Ajoute un **site web IIS** :
+   - Ouvre **Gestionnaire IIS**.
+   - Fais **"Ajouter un site Web"**.
+   - Dans **"Chemin d’accès physique"**, mets `C:\inetpub\wwwroot\myapp`.
+   - Choisis un port (ex: `80` ou `8080`).
+
+3. Active **le mode SPA** :
+   - Dans IIS, sélectionne **"myapp"** > **"Erreur HTTP"** > **"Ajouter une redirection"**.
+   - Mets **"404"** et redirige vers `index.html`.
+
+4. Redémarre IIS :
+   ```sh
+   iisreset
+   ```
+
+**Ton app est en ligne !** 🚀
+
+---
+
+## ⚙️ **Méthode 2 : Déploiement avec Nginx**
+Si tu préfères utiliser **Nginx** au lieu de IIS :
+
+### 🔹 **2.1 Installer Nginx**
+1. Télécharge **Nginx pour Windows** :  
+   → [https://nginx.org/en/download.html](https://nginx.org/en/download.html)
+2. Décompresse-le dans `C:\nginx`.
+
+### 🔹 **2.2 Configurer Nginx**
+1. Place ton app dans `C:\nginx\html\myapp` :
+   - Fais un build sur ton PC :
+     ```sh
+     npm run build
+     ```
+   - Copie `dist/` dans `C:\nginx\html\myapp`.
+
+2. Modifie la config Nginx (`C:\nginx\conf\nginx.conf`) :
+   ```nginx
+   server {
+       listen 80;
+       server_name localhost;
+
+       root C:/nginx/html/myapp;
+       index index.html;
+       location / {
+           try_files $uri /index.html;
+       }
+   }
+   ```
+
+3. Lancer Nginx :
+   - Ouvre une invite de commande (`cmd`).
+   - Exécute :
+     ```sh
+     C:\nginx\nginx.exe
+     ```
+
+**Ton app est disponible sur `http://localhost` !** 🎉
+
+---
+
+## 📌 **3. Ajouter un nom de domaine (optionnel)**
+Si tu veux un **nom de domaine** :
+- Achète un domaine (`mon-site.com`).
+- Dans ton fournisseur DNS, pointe le domaine vers **l’IP de ton VPS**.
+- Ajoute un certificat SSL avec **Let's Encrypt**.
+
+---
+
+## **Conclusion**
+- **Méthode IIS** → simple, mais un peu plus lourd.  
+- **Méthode Nginx** → plus léger et rapide.  
+
+Si tu veux encore plus de contrôle, tu peux installer **Caddy** (serveur web moderne qui gère SSL automatiquement).
+
+💡 **Tu veux que je t’aide à choisir entre IIS et Nginx ?**
