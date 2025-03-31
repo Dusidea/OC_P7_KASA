@@ -42,15 +42,15 @@ Glisse-dépose les fichiers dans "www" côté serveur.
 5. Une configuration Apache correcte (.htaccess pour React Router)
    Si ton app utilise React Router, ajoute ce fichier .htaccess dans www/ :
 
-apache
-Copier
-Modifier
+```
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
+```
+
 Cela empêche les erreurs 404 en mode SPA.
 
 note : il y avait déjà un fichier .htaccess, je l'ai remplacé
