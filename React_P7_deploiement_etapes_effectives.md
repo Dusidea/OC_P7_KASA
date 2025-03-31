@@ -1,3 +1,5 @@
+# Deploiement sur hebergement mutualisé
+
 1. Go to OVH > hebergement : cliquer sur mon hebergment > FTP SSH
    l'hote est la ligne copiable ftp.cluster029.hosting.ovh.net
 
@@ -83,3 +85,9 @@ ok j'avais un autre pb :
 
 Ca fonctionne, le projet KASA est dispo sur dusidea.fr
 Par contre il est à la racine, pas dans un sous dossier et donc c'est le site principal. Pb
+
+# Deploiement sur VPS
+
+## Possible sur Linux et Windows
+- Sur Linux : simple mais nécessite Linux
+- Sur Windows via Windows Server Live ou outils comme Caddy ou Nginx
