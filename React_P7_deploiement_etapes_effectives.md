@@ -9,7 +9,7 @@
 - modifier la config de vite.confing.js pour ajouter le chemin du dossier dans ovh (home/dusided) => je rajoute la ligne :
 
 ```
-base: "/dusided/", => NON, en fait tout est bien à la racine, c'est de la merde, laisse la valeur de base
+base: "/dusided/", => NON, en fait tout est bien à la racine, il faut laisser la valeur de base, pas de modif à cet endroit
 ```
 
 - rebuild : lancer "npm run build"
